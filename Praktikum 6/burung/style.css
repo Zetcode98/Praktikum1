@@ -1,0 +1,36 @@
+#header{
+    background-color:aquamarine;
+    padding: 10px;
+}
+
+h1{
+    color:brown;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center; 
+    margin: 10px;   
+}
+
+blockquote{
+    background-color:yellowgreen;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 10px;
+}
+
+.title{
+    text-align: center;
+    font-size: medium;
+}
+
+.gambar{
+    background-color: black;
+    text-align: center;
+}
+
+.p{
+    text-align: center;
+    width: fit-content;
+}
+
+

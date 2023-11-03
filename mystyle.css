@@ -1,0 +1,70 @@
+body{
+    background-color: rgb(17, 141, 100);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: black;
+}
+
+p{
+    text-align: justify;
+    width: fit-content;
+}
+
+.center{    
+    width:fit-content;
+    background-color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.foto{
+    width: 23%;
+}
+
+h2{
+    text-align: center;
+    font-size: 45px;
+    color: red;
+}
+
+.promo h3{
+    text-align: center;
+    font-size: 30px;
+    color: red;
+}
+
+.cod p{
+    background-color: aqua;
+    border: 2px dotted red;
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+}
+
+.cod{
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+}
+
+#tombol{
+    justify-content: center;
+    display: flex;
+
+}
+
+#tombol button{
+    background: yellow;
+    font-weight: bold;
+    color: red;
+}
+
+table,th,td {
+     
+}
