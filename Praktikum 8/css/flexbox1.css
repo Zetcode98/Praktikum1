@@ -1,0 +1,42 @@
+body{
+    background-color: beige;
+}
+
+header{
+    background-color: aquamarine;
+    margin: 10px;
+}
+
+header ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0. 5em;
+    justify-content: space-between;
+}
+
+header li{
+    margin: 0 1em;
+}
+
+.logo{
+    margin-right: auto;
+}
+
+.img {
+    width: 100px;
+}
+
+li {
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+

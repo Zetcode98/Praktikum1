@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+}
+
+header, nav, article, aside {
+    padding: 25px;
+    margin: 0;
+}
+
+.header {
+    background-color: #86abcf;
+    width: 95%;
+    /* margin-left: 25%; */
+} 
+
+.nav {
+    background-color: palevioletred;
+    width: 21%;
+    height: 90vh;
+    margin-top: 0;
+}
+
+.content {
+    display: table-row;
+    /* height: 80vh; */
+    width: 100%;
+
+}
+
+.article {
+    background-color: antiquewhite;
+    width: 50%;
+    height: 78vh;
+}
+
+.aside {
+    background-color: aqua;
+    width: 50%;
+    height: 78vh;
+}
+
+.footer {
+    background-color: #86abcf;
+    width: 100%;
+    /* margin-left: 25%; */
+    /* height: 20vh; */
+}
+
+.flex {
+    display: flex;
+}
