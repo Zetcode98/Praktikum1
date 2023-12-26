@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Validasi Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(223, 226, 226);">
+    <fieldset>
+        <legend>
+            <h2>Validasi Form</h2>
+        </legend>
+        <form id="myForm">
+            <div>
+                <label for="namaPelanggan">Nama Pelanggan</label>
+                <a style="margin-left: 70px;"></a>
+                <span class="w-2">:</span>
+                <input type="text" id="namaPelanggan" maxlength="30" required>
+                <span id="namaError" class="error"></span>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <a style="margin-left: 140px;"></a>
+                <span class="w-2">:</span>
+                <input type="email" id="email" required>
+                <span id="emailError" class="error"></span>
+            </div>
+            <div>
+                <label for="jamKeberangkatan">Jam Keberangkatan</label>
+                <a style="margin-left: 52px;"></a>
+                <span class="w-2">:</span>
+                <input type="text" id="jamKeberangkatan" placeholder="Format: 00.00 - 23.59" required>
+                <span id="jamError" class="error"></span>
+            </div>
+            <div>
+                <label for="tujuanKeberangkatan">Tujuan Keberangkatan</label>
+                <a style="margin-left: 33px;"></a>
+                <span class="w-2">:</span>
+                <input type="text" id="tujuanKeberangkatan" required>
+                <span id="tujuanError" class="error"></span>
+            </div>
+            <div>
+                <label for="jumlahTiket">Jumlah Tiket</label>
+                <a style="margin-left: 95px;"></a>
+                <span class="w-2">:</span>
+                <input type="number" id="jumlahTiket" min="1" max="10" required>
+                <span id="jumlahError" class="error"></span>
+            </div>
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+        <div id="displayData" style="display: none;">
+            <h2>Detail Pemesanan:</h2>
+            <p id="displayNama"></p>
+            <p id="displayEmail"></p>
+            <p id="displayJam"></p>
+            <p id="displayTujuan"></p>
+            <p id="displayJumlah"></p>
+        </div>
+    </fieldset>
+    <script>
+        function validateForm() {
+            const namaPelanggan = document.getElementById('namaPelanggan').value;
+            const email = document.getElementById('email').value;
+            const jamKeberangkatan = document.getElementById('jamKeberangkatan').value;
+            const tujuanKeberangkatan = document.getElementById('tujuanKeberangkatan').value;
+            const jumlahTiket = document.getElementById('jumlahTiket').value;
+
+            const namaError = document.getElementById('namaError');
+            const emailError = document.getElementById('emailError');
+            const jamError = document.getElementById('jamError');
+            const tujuanError = document.getElementById('tujuanError');
+            const jumlahError = document.getElementById('jumlahError');
+
+            // Reset error messages
+            namaError.textContent = '';
+            emailError.textContent = '';
+            jamError.textContent = '';
+            tujuanError.textContent = '';
+            jumlahError.textContent = '';
+
+            let isValid = true;
+
+            if (namaPelanggan.length === 0 || namaPelanggan.length > 30) {
+                namaError.textContent = 'Nama harus diisi (maksimal 30 karakter)';
+                isValid = false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.textContent = 'Format email tidak valid';
+                isValid = false;
+            }
+
+            const jamRegex = /^(0[0-9]|1[0-9]|2[0-3])(\.[0-5][0-9])?$/;
+            if (!jamRegex.test(jamKeberangkatan)) {
+                jamError.textContent = 'Format jam tidak valid (00.00 - 23.59)';
+                isValid = false;
+            }
+
+            if (tujuanKeberangkatan.length === 0) {
+                tujuanError.textContent = 'Tujuan keberangkatan harus diisi';
+                isValid = false;
+            }
+
+            if (jumlahTiket < 1 || jumlahTiket > 10 || isNaN(jumlahTiket)) {
+                jumlahError.textContent = 'Jumlah tiket harus antara 1 dan 10';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Menampilkan data jika valid
+                document.getElementById('displayNama').textContent = `Nama Pelanggan: ${namaPelanggan}`;
+                document.getElementById('displayEmail').textContent = `Email: ${email}`;
+                document.getElementById('displayJam').textContent = `Jam Keberangkatan: ${jamKeberangkatan}`;
+                document.getElementById('displayTujuan').textContent = `Tujuan Keberangkatan: ${tujuanKeberangkatan}`;
+                document.getElementById('displayJumlah').textContent = `Jumlah Tiket: ${jumlahTiket}`;
+
+                document.getElementById('displayData').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function cekLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const usernameBenar = 'ahmad2017';
+            const passwordBenar = 'integrity';
+
+            if (username === usernameBenar && password === passwordBenar) {
+                alert('Login sukses');
+                window.location.href = 'halaman_baru.html'; // Arahkan ke halaman baru setelah login sukses
+            } else {
+                alert('Login gagal');
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Form Login</h1>
+    <table>
+        <tr>
+            <td><label for="username">Username:</label></td>
+            <td><input type="text" id="username" name="username" required></td>
+        </tr>
+        <tr>
+            <td><label for="password">Password:</label></td>
+            <td><input type="password" id="password" name="password" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="button" onclick="cekLogin()">Login</button></td>
+        </tr>
+    </table>
+    <script src="otentikasi.js"></script>
+</body>
+
+</html>

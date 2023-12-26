@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Konverter Mata Uang</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function konversi() {
+  const mataUangSelect = document.getElementById('mataUang');
+  const jumlahInput = document.getElementById('jumlah');
+  const hasilInput = document.getElementById('hasil');
+  const mataUangTerpilih = mataUangSelect.value;
+  const jumlah = parseFloat(jumlahInput.value);
+
+  let kursTukar = 0;
+
+  switch (mataUangTerpilih) {
+    case 'usd':
+      kursTukar = 9915; // 1 Dollar Amerika ke Rupiah
+      break;
+    case 'sgd':
+      kursTukar = 13472; // 1 Dollar Singapura ke Rupiah
+      break;
+    case 'myr':
+      kursTukar = 874; // 1 Ringgit Malaysia ke Rupiah
+      break;
+    case 'jpy':
+      kursTukar = 120; // 1 Yen Jepang ke Rupiah
+      break;
+    case 'eur':
+      kursTukar = 15888; // 1 Euro ke Rupiah
+      break;
+    case 'sar':
+      kursTukar = 3592; // 1 Riyal Arab Saudi ke Rupiah
+      break;
+    default:
+      break;
+  }
+
+  const hasil = jumlah * kursTukar;
+  hasilInput.value = hasil.toLocaleString('id-ID'); // Menampilkan hasil dengan pemisah ribuan
+}
+
+    </script>
+</head>
+
+<body>
+    <h1>Konverter Mata Uang</h1>
+    <table>
+        <tr>
+            <td>Masukkan nilai:</td>
+            <td>
+                <input type="number" id="jumlah">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Valas:</td>
+            <td>
+                <select id="mataUang">
+                    <option value="usd">Dollar Amerika</option>
+                    <option value="sgd">Dollar Singapura</option>
+                    <option value="myr">Ringgit Malaysia</option>
+                    <option value="jpy">Yen Jepang</option>
+                    <option value="eur">Euro</option>
+                    <option value="sar">Riyal Arab Saudi</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="konversi()">Konversi</button>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>Hasil konversi:</td>
+            <td><input type="text" id="hasil" readonly></td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>

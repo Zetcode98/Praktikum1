@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+    <script>
+        
+        function image_picker(){
+            const daftar_gambar = ["harimau.jpeg", "naga.jpeg", "elang.jpeg", "kucing.jpg", "pegasus.jpg"];
+            let pilihan = document.getElementById("option").value;
+
+            if( pilihan == "harimau"){
+                let select = daftar_gambar[0];
+                document.getElementById("gambar").src = `images/${select}`;
+            }
+
+            if( pilihan == "naga"){
+                let select = daftar_gambar[1];
+                document.getElementById("gambar").src = `images/${select}`;
+            }
+
+            if( pilihan == "elang"){
+                let select = daftar_gambar[2];
+                document.getElementById("gambar").src = `images/${select}`;
+            }
+
+            if( pilihan == "kucing"){
+                let select = daftar_gambar[3];
+                document.getElementById("gambar").src = `images/${select}`;
+            }
+
+            if( pilihan == "pegasus"){
+                let select = daftar_gambar[4];
+                document.getElementById("gambar").src = `images/${select}`;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1> Image Picker </h1>
+
+    <select name="" id="option" onchange="image_picker()">
+        <option value=""> Pilih Gambar :</option>
+        <option value="harimau"> Harimau </option>
+        <option value="naga"> Naga </option>
+        <option value="elang"> Elang </option>
+        <option value="kucing"> Kucing </option>
+        <option value="pegasus"> Pegasus </option>
+    </select>
+
+    <div class="container">
+        <br><br>
+        <img id="gambar" width="450px">
+    </div>
+</body>
+</html>

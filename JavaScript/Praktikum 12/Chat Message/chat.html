@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbox Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function kirimPesan() {
+            const pesanInput = document.getElementById('pesanInput');
+            const pesanDiv = document.getElementById('pesan');
+            const pesan = pesanInput.value;
+
+            if (pesan.trim() !== '') {
+                const pesanBaru = document.createElement('div');
+                pesanBaru.classList.add('pesan-baru');
+                pesanBaru.textContent = pesan;
+                pesanDiv.appendChild(pesanBaru);
+
+                pesanInput.value = '';
+                pesanDiv.scrollTop = pesanDiv.scrollHeight;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="chatbox">
+            <div class="pesan" id="pesan">
+                <!-- Pesan akan ditampilkan di sini -->
+            </div>
+            <input type="text" id="pesanInput" placeholder="Ketik pesan...">
+            <button onclick="kirimPesan()">Kirim</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
